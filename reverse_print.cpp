@@ -43,6 +43,12 @@ void reverse_print_linklist(LinkNode *head) {
     return;
 }
 
+void print_reverse_recursively(LinkNode *head) {
+    if (NULL == head)  return;
+    print_reverse_recursively(head->next);
+    printf("%d-->", head->data);
+}
+
 int main() {
 
     LinkNode *head = NULL;
@@ -54,5 +60,7 @@ int main() {
     reverse_print_linklist(head);
     LinkNode *null = NULL;
     reverse_print_linklist(null);
+    print_reverse_recursively(head);
+    printf("\n");
     return 0;
 }
