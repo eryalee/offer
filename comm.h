@@ -13,4 +13,9 @@ struct LinkNode {
     LinkNode *next;
 };
 
+struct ListNode {
+    int data;
+    ListNode *next;
+};
+
 #endif  // __COMM_H__

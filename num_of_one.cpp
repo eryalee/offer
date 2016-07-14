@@ -22,11 +22,21 @@ int count_one(int num) {
     return x;
 }
 
+int num_of_one1(int num) {
+    int count = 0;
+    while (num) {
+        ++count;
+        num &= (num - 1);
+    }
+    return count;
+}
+
 int main() {
     printf("num_of_one(%d) = %d\n", 10, num_of_one(10));
     printf("num_of_one(%d) = %d\n", 0, num_of_one(0));
     printf("num_of_one(%d) = %d\n", -10, num_of_one(-10));
     printf("num_of_one(%d) = %d\n", -10, count_one(-10));
+    printf("num_of_one(%d) = %d\n", -10, num_of_one1(-10));
     printf("num_of_one(%d) = %d\n", 10, count_one(10));
     return 0;
 }
